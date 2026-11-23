@@ -1,0 +1,23 @@
+{
+  "name": "yugioh-roguelike",
+  "version": "0.1.0",
+  "description": "Yu-Gi-Oh! Duel Monsters temalı roguelike düello oyunu (kişisel prototip)",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "node tests/engine.test.js",
+    "build-db": "node tools/build-db.js",
+    "images": "node tools/download-images.js",
+    "dist": "electron-builder --win portable"
+  },
+  "build": {
+    "appId": "local.yugioh.roguelike",
+    "productName": "YuGiOh Roguelike",
+    "files": ["main.js", "preload.js", "src/**/*", "data/cards.dm.json", "data/images/**/*"],
+    "win": { "target": "portable" }
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  }
+}
